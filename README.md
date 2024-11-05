@@ -4,6 +4,7 @@ Mòdul  dual NF4 powershell
 Repositorio de practicas con powershell:
 
 Act6-ej1:
+
   Solicita la ruta: Usamos Read-Host para que el usuario ingrese la ruta en la que desea buscar.
   
   Solicita el nombre del archivo o directorio: Usamos Read-Host para ingresar el nombre del archivo o directorio a buscar
@@ -13,6 +14,7 @@ Act6-ej1:
   Mensaje de resultado: Si Test-Path confirma la existencia, se imprime un mensaje indicando que se ha encontrado el archivo/directorio, y si    no indica que no se ha encontrado en la ruta.
   
 Act6-ej2:
+
   Solicita la ruta de origen: Usando Read-Host, el usuario introduce la ruta del directorio que quiere copiar.
   
   Solicita la ruta de destino: Con Read-Host de nuevo, se solicita la ubicación donde se quiere guardar la copia de seguridad.
