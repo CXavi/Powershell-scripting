@@ -1,0 +1,9 @@
+$origen = Read-Host "Introduce la ruta del directorio a copiar"
+$destino = Read-Host "Introduce la ruta de la copia de seguridad"
+
+if (Test-Path $origen) {
+    Copy-Item -Path $origen\* -Destination $destino -Recurse
+    Write-Output "Copia de seguridad completada de '$origen' a '$destino'"
+} else {
+    Write-Output "No se ha encontrado el directorio de origen '$origen'"
+}
