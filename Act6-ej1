@@ -1,0 +1,8 @@
+$ruta = Read-Host "Introduce la ruta a buscar"
+$nom = Read-Host "Introduce el nombre del fichero o directorio"
+
+if (Test-Path "$ruta\$nom") {
+    Write-Output "Se ha encontrado el fichero/directorio '$nom' en la ruta '$ruta'"
+} else {
+    Write-Output "No se ha encontrado el fichero/directorio '$nom' en la ruta '$ruta'"
+}
