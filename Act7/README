@@ -1,1 +1,18 @@
-prueba2
+EJ1:
+En el ejercicio 1, la función Calcular toma tres parámetros: valor1, valor2, y operacion.
+Según el valor de operacion (+, -, *, /), la función realiza la operación aritmética correspondiente entre valor1 y valor2.
+
+Ejemplo para usarlo:
+Calcular 15 3 /
+
+EJ2:
+La función entra en un bucle que sigue ejecutándose hasta que el usuario elige salir.
+Dentro del bucle, verifica si el archivo especificado existe usando Test-Path.
+
+    Si existe, muestra "El archivo existe en esta ruta."
+    Si no existe, muestra "No se ha encontrado el archivo nombreArchivo."
+
+Luego, pregunta al usuario si quiere continuar o salir (S para salir).
+
+    Si el usuario elige S, el bucle se rompe y el script termina.
+    Si elige continuar, se le pide otro nombre de archivo y el proceso se repite.
