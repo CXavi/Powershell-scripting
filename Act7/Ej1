@@ -1,0 +1,18 @@
+function Calcular {
+    param (
+        [int]$valor1,
+        [int]$valor2,
+        [string]$operacion
+    )
+
+    if ($operacion -eq "+") { $resultado = $valor1 + $valor2 }
+    elseif ($operacion -eq "-") { $resultado = $valor1 - $valor2 }
+    elseif ($operacion -eq "*") { $resultado = $valor1 * $valor2 }
+    elseif ($operacion -eq "/") {
+        if ($valor2 -ne 0) { $resultado = $valor1 / $valor2 }
+        else { Write-Output "No se puede dividir por cero."; return }
+    }
+    else { Write-Output "Operación no válida."; return }
+
+    Write-Output "Resultado: $resultado"
+}
