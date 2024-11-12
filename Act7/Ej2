@@ -1,0 +1,21 @@
+function VerificarArchivo {
+    param (
+        [string]$nombreArchivo
+    )
+
+    while ($true) {
+        if (Test-Path -Path $nombreArchivo) {
+            Write-Output "El archivo existe en esta ruta."
+        } else {
+            Write-Output "No se ha encontrado el archivo $nombreArchivo."
+        }
+
+        $respuesta = Read-Host "¿Quieres verificar otro archivo o salir? (Escribe S para salir, cualquier otra tecla para continuar)"
+        if ($respuesta -eq 'S') {
+            Write-Output "Saliendo del script."
+            break
+        }
+
+        $nombreArchivo = Read-Host "Introduce el nombre del archivo a verificar"
+    }
+}
