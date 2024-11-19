@@ -1,1 +1,21 @@
+$filter = Read-Host "¿Qué tipo de puertos quieres filtrar? (TCP, UDP o TODOS)"
 
+switch ($filter.ToUpper()) {
+    "TCP" {
+        Write-Host "Puertos TCP abiertos:"
+        Get-NetTCPConnection | Where-Object { $_.State -eq "Listen" } | Format-Table -AutoSize
+    }
+    "UDP" {
+        Write-Host "Puertos UDP abiertos:"
+        Get-NetUDPEndpoint | Format-Table -AutoSize
+    }
+    "TODOS" {
+        Write-Host "Puertos TCP abiertos:"
+        Get-NetTCPConnection | Where-Object { $_.State -eq "Listen" } | Format-Table -AutoSize
+        Write-Host "`nPuertos UDP abiertos:"
+        Get-NetUDPEndpoint | Format-Table -AutoSize
+    }
+    default {
+        Write-Host "Entrada no válida. Escribe TCP, UDP o TODOS." -ForegroundColor Yellow
+    }
+}
