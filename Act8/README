@@ -9,3 +9,9 @@ Si no puede conectar, muestra:
 "No hay conexión a la red."
 
 EJ3:
+Pide al usuario el tipo de puertos: TCP, UDP o TODOS.
+Filtra según lo elegido:
+
+    TCP: Usa Get-NetTCPConnection y muestra solo los que están en estado Listen (abiertos).
+    UDP: Usa Get-NetUDPEndpoint para listar los puertos UDP abiertos.
+    TODOS: Muestra primero los TCP y después los UDP.
