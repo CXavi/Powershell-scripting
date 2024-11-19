@@ -1,6 +1,6 @@
 $address = "google.com"
 if (Test-Connection -ComputerName $address -Count 1 -Quiet) {
-    Write-Host "La conexión TCP funciona correctamente." -ForegroundColor Green
+    Write-Host "La conexión TCP funciona correctamente."
 } else {
-    Write-Host "No hay conexión a la red." -ForegroundColor Red
+    Write-Host "No hay conexión a la red."
 }
