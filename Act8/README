@@ -2,4 +2,10 @@ Ej1:
 El primer ejercicio no he logrado hacerlo.
 
 EJ2:
+Usa el comando Test-Connection para intentar contactar con la dirección indicada (en este caso, google.com).
+Si la conexión funciona, muestra el mensaje:
+"La conexión TCP funciona correctamente."
+Si no puede conectar, muestra:
+"No hay conexión a la red."
 
+EJ3:
