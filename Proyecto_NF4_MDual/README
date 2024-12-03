@@ -1,0 +1,10 @@
+Ej1:
+El script usa VBoxManage para crear una máquina virtual con un nombre que escojamos,
+asigna recursos básicos (RAM y CPU) y configura 8 tarjetas de red en modo NAT.
+
+EJ2:
+Similar al anterior, pero en Bash. Crea una máquina virtual en VirtualBox,
+asigna recursos y añade 8 tarjetas de red en modo NAT.
+
+EJ3:
+Ofrece un menú para encender, guardar el estado o apagar una máquina virtual específica usando funciones que llaman a VBoxManage.
