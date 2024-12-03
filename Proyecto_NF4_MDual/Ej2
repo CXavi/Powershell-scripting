@@ -1,0 +1,14 @@
+#!/bin/bash
+
+VM_NAME="xcoma2"
+VBoxManage createvm --name "$VM_NAME" --register
+
+# Configurar la máquina virtual
+VBoxManage modifyvm "$VM_NAME" --memory 2048 --cpus 2 --ostype "Windows10_64"
+
+# Añadir 8 tarjetas de red
+for i in {1..8}; do
+    VBoxManage modifyvm "$VM_NAME" --nic$i nat
+done
+
+echo "Máquina virtual '$VM_NAME' creada con 8 tarjetas de red."
