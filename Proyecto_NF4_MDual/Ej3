@@ -1,0 +1,42 @@
+$vboxManagePath = "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe"
+$vmName = "xcoma1" # Cambia este nombre según la máquina que quieras gestionar
+
+function Encender-Maquina {
+    & "$vboxManagePath" startvm $vmName --type headless
+    Write-Output "La máquina virtual '$vmName' se ha encendido."
+}
+
+function Guardar-Estado {
+    & "$vboxManagePath" controlvm $vmName savestate
+    Write-Output "El estado de la máquina virtual '$vmName' se ha guardado."
+}
+
+function Apagar-Maquina {
+    & "$vboxManagePath" controlvm $vmName poweroff
+    Write-Output "La máquina virtual '$vmName' se ha apagado."
+}
+
+# Menú simple
+while ($true) {
+    Write-Host "--------------------------------"
+    Write-Host "  GESTIÓN DE MÁQUINAS VIRTUALES"
+    Write-Host "--------------------------------"
+    Write-Host "1. Encender la máquina virtual"
+    Write-Host "2. Guardar estado de la máquina virtual"
+    Write-Host "3. Apagar la máquina virtual"
+    Write-Host "4. Salir"
+    $opcion = Read-Host "Elige una opción (1-4)"
+    
+    switch ($opcion) {
+        "1" { Encender-Maquina }
+        "2" { Guardar-Estado }
+        "3" { Apagar-Maquina }
+        "4" { 
+            Write-Host "Saliendo del programa. ¡Hasta luego!"
+            break
+        }
+        default {
+            Write-Host "Opción no válida. Inténtalo de nuevo."
+        }
+    }
+}
