@@ -1,0 +1,15 @@
+$vmName = "xcoma1"
+$vboxManagePath = "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe"
+
+# Crear la máquina virtual
+& "$vboxManagePath" createvm --name $vmName --register
+
+# Configurar la máquina virtual
+& "$vboxManagePath" modifyvm $vmName --memory 2048 --cpus 2 --ostype "Windows10_64"
+
+# Añadir 8 tarjetas de red
+for ($i = 1; $i -le 8; $i++) {
+    & "$vboxManagePath" modifyvm $vmName --nic$i nat
+}
+
+Write-Output "Máquina virtual '$vmName' creada con 8 tarjetas de red."
